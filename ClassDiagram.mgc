@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ClassDiagram>
+    <Class name="GUI.ManagerFrame" x="833" y="101">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="true"/>
+        <MethodDisplayFilter public-accepted="false"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Communication destinationClassName="drive.Driver"/>
+        <Communication destinationClassName="journey.Stop"/>
+        <Communication destinationClassName="System.SystemManager"/>
+        <Communication destinationClassName="drive.Train"/>
+    </Class>
+    <Class name="drive.Drive" x="538" y="683">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="true"/>
+        <MethodDisplayFilter public-accepted="false"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Association destinationClassName="journey.Route"
+            endpointName="route" kind="Simple"/>
+        <Association destinationClassName="journey.Stop"
+            endpointName="fromStop" kind="Simple"/>
+        <Association destinationClassName="journey.Journey"
+            endpointName="journey" kind="Simple"/>
+        <Association destinationClassName="drive.Driver"
+            endpointName="driver" kind="Simple"/>
+        <Association destinationClassName="journey.Stop"
+            endpointName="toStop" kind="Simple"/>
+        <Association destinationClassName="drive.Train"
+            endpointName="train" kind="Simple"/>
+        <Communication destinationClassName="GUI.ManagerFrame"/>
+        <Communication destinationClassName="journey.Route"/>
+        <Communication destinationClassName="drive.Train"/>
+    </Class>
+    <Class name="drive.Train" x="823" y="527">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="false"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class name="GUI.TimeTableObserver" x="261" y="150">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="true"/>
+        <MethodDisplayFilter public-accepted="false"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Association destinationClassName="journey.Route"
+            endpointName="routeToDisplay" kind="Simple"/>
+        <Communication destinationClassName="journey.Stop"/>
+        <Communication destinationClassName="journey.Route"/>
+        <Communication destinationClassName="System.SystemManager"/>
+    </Class>
+    <Class name="drive.Driver" x="657" y="517">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="true"/>
+        <MethodDisplayFilter public-accepted="false"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class name="journey.Stop" x="100" y="597">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="true"/>
+        <MethodDisplayFilter public-accepted="false"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class name="System.SystemManager" x="576" y="110">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="true"/>
+        <MethodDisplayFilter public-accepted="false"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Association destinationClassName="drive.Train"
+            endpointName="trainList" kind="Simple"/>
+        <Association destinationClassName="journey.TimeTable"
+            endpointName="timeTable" kind="Simple"/>
+        <Association destinationClassName="drive.Train"
+            endpointName="busyTrainList" kind="Simple"/>
+        <Association destinationClassName="drive.Driver"
+            endpointName="driverList" kind="Simple"/>
+        <Association destinationClassName="GUI.ManagerFrame"
+            endpointName="managerFrame" kind="Simple"/>
+        <Association destinationClassName="drive.Drive"
+            endpointName="driveList" kind="Simple"/>
+        <Association destinationClassName="drive.Driver"
+            endpointName="busyDriverList" kind="Simple"/>
+        <Association destinationClassName="GUI.TimeTableObserver"
+            endpointName="timeTableOb" kind="Simple"/>
+        <Communication destinationClassName="GUI.ManagerFrame"/>
+        <Communication destinationClassName="drive.Drive"/>
+    </Class>
+    <Class name="journey.Route" x="201" y="406">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="true"/>
+        <MethodDisplayFilter public-accepted="false"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Association destinationClassName="journey.Stop"
+            endpointName="stopList" kind="Simple"/>
+        <Association destinationClassName="journey.Journey"
+            endpointName="journeylist" kind="Simple"/>
+        <Association destinationClassName="journey.Stop"
+            endpointName="centralStation" kind="Simple"/>
+    </Class>
+    <Class name="journey.Journey" x="311" y="591">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="true"/>
+        <MethodDisplayFilter public-accepted="false"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class name="journey.TimeTable" x="427" y="407">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Association destinationClassName="journey.Route"
+            endpointName="routeList" kind="Simple"/>
+        <Association destinationClassName="journey.Stop"
+            endpointName="centralStation" kind="Simple"/>
+    </Class>
+</ClassDiagram>
